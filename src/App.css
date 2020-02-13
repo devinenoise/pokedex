@@ -49,6 +49,7 @@ h3 {
   font-size: 40px;
   color: #F2F2F0;
   font-family: 'Roboto', sans-serif;
+  
 }
 
 p {
@@ -76,12 +77,36 @@ p {
   margin: 5px;
   opacity: .8;
   border-radius: .5rem;
+  
 }
 
 .container:hover {
   opacity: 1;
+  -webkit-box-shadow: 0 8px 6px -6px black;
+  -moz-box-shadow: 0 8px 6px -6px black;
+  box-shadow: 0 8px 6px -6px black;
+  -webkit-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  transform: scale(1.04);
 }
+
 
 .creature, .type {
   text-transform: capitalize;
+}
+
+.pokeball {
+  float: left;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  margin-right: -100px;
+}
+
+.pokeballtwo {
+  float: right;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  margin-left: -100px;
 }
