@@ -1,0 +1,64 @@
+
+
+
+* {
+  margin: 0;
+  text-align: center;
+  
+}
+
+ul li {
+  list-style-type: none;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
+
+header {
+  text-align: center;
+  background-color: purple;
+  margin-bottom: 50px;
+}
+
+.choices {
+  text-transform: capitalize;
+  margin: 20px;
+  
+}
+
+h1 {
+  font-size: 44px;
+  color: white;
+  font-family: sans-serif;
+} 
+
+h3 {
+  font-size: 42px;
+  color: white;
+  font-family: sans-serif;
+}
+
+p {
+  font-size: 22px;
+}
+
+.description {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.attributes {
+  margin: 10px;
+  font-size: 20px;
+}
+
+.container {
+  border: .5px solid black;
+  width: 750px;
+  height: 500px;
+  display: inline-block;
+  background-color: #688EA6;
+}
