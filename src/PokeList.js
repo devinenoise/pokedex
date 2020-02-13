@@ -10,6 +10,8 @@ export default class PokeList extends Component {
         const pokeList = pokeData.map(item => {
             return <PokeItem pokemon={item} key={item.name} />
         })
+
+        
         return (
             <div>
 
