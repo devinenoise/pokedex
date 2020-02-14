@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Header.js correctly 1`] = `
+<div>
+  <header>
+    <img
+      alt="poke ball"
+      class="pokeball"
+      src="./Poke_Ball.png"
+    />
+    <img
+      alt="poke ball"
+      class="pokeballtwo"
+      src="./Poke_Ball.png"
+    />
+    <h1>
+      PokeDex
+    </h1>
+  </header>
+</div>
+`;

@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders App.js correctly 1`] = `
+<div>
+  <div>
+    <header>
+      <img
+        alt="poke ball"
+        class="pokeball"
+        src="./Poke_Ball.png"
+      />
+      <img
+        alt="poke ball"
+        class="pokeballtwo"
+        src="./Poke_Ball.png"
+      />
+      <h1>
+        PokeDex
+      </h1>
+    </header>
+  </div>
+  <div
+    id="search"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <input
+        onChange={[Function]}
+        required={true}
+        value=""
+      />
+      <button>
+        Search
+      </button>
+    </form>
+  </div>
+  <p>
+    No results, try again!
+  </p>
+  <div>
+    <ul />
+  </div>
+</div>
+`;
