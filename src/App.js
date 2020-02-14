@@ -30,6 +30,7 @@ export default class App extends Component {
     })
   }
 
+
 render() {
 
   const { pokeData, totalResults } = this.state;

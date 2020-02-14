@@ -23,7 +23,7 @@ export default class Search extends Component {
         return(
             <div id="search">
                 <form onSubmit={this.handleForm}>
-                <input 
+                <input required
                 onChange={e => this.setState({ searchName: e.target.value})} 
                 value={this.state.searchName}/>
                 <button>Search</button>
