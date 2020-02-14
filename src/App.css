@@ -107,3 +107,12 @@ p {
   padding: 5px;
   margin-left: -100px;
 }
+
+button {
+  margin: 10px;
+  width: 100px;
+}
+
+input {
+  margin-left: 10px;
+}
