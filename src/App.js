@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Header from './Header.js';
 import SearchOptions from './SearchOptions.js';
 import PokeList from './PokeList.js';
-import request from 'superagent';
+import Paging from './Paging.js';
+import getPokemon from './PokemonApi.js'
 
 //stylesheet
 import './App.css';
@@ -10,56 +11,64 @@ import './App.css';
 
 export default class App extends Component {
   //setting empty state
-  state = { pokeData: [] };
+  state = { pokeData: [] }
 
-  //updating the url and displaying the search results in the url
-  async searchLoad() {
-    const URL = 'https://alchemy-pokedex.herokuapp.com/api/pokedex';
-    const searchQuery = window.location.hash.slice(1);
-    const searchToLoad = `${URL}?${searchQuery}`;
-    const newPokemon = await request.get(searchToLoad);
-    this.setState({ pokeData: newPokemon.body.results })
-
-
-
-    const response = await fetch(searchToLoad);
-    const data = await response.json();
-    if (data.Response === "False") {
-      return {
-        Search: [],
-        totalResults: 0
-      };
-    }
-
-    return data;
+  async loadPokemon() {
+    const response = await getPokemon();
+    const pokeData = response.results;
+    const totalResults = response.count;
+    this.setState({
+      pokeData: pokeData,
+      totalResults: totalResults,
+    });
   }
 
-
-  // fetching the api and setting state
   async componentDidMount() {
-    const pokemonGang = await request.get('https://alchemy-pokedex.herokuapp.com/api/pokedex')
-
-    this.setState({ pokeData: pokemonGang.body.results })
-
-    window.addEventListener('hashchange', () => {
-      this.searchLoad()
+    await this.loadPokemon();
+    window.addEventListener('hashchange', async () => {
+      await this.loadPokemon();
     })
-
   }
 
-  render() {
+  // updating the url and displaying the search results in the url
+// async searchLoad() {
+//   const URL = 'https://alchemy-pokedex.herokuapp.com/api/pokedex';
+//   const searchQuery = window.location.hash.slice(1);
+//   const searchToLoad = `${URL}?${searchQuery}`;
+//   this.setState({ pokeData: searchQuery })
 
-    return (
+// }
 
-      <div>
 
-        <Header />
+// fetching the api and setting state
+// async componentDidMount() {
+//   const pokemonGang = await request.get('https://alchemy-pokedex.herokuapp.com/api/pokedex')
 
-        <SearchOptions />
+//   this.setState({ pokeData: pokemonGang.body.results })
 
-        <PokeList pokemon={this.state.pokeData} />
+//   window.addEventListener('hashchange', () => {
+//     this.searchLoad()
+//   })
 
-      </div>
-    );
-  }
+// }
+
+render() {
+
+  const { pokeData, totalResults } = this.state;
+
+  return (
+
+    <div>
+
+      <Header />
+
+      <SearchOptions />
+
+      <Paging totalResults={totalResults} />
+
+      <PokeList pokemon={pokeData} />
+
+    </div>
+  );
+}
 }
