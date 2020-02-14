@@ -3,10 +3,7 @@ import './App.css';
 
 
 export default class Paging extends Component {
-    constructor() {
-        super();
-        this.state = { page: 1 };
-    }
+    state = { page: 1 };
 
     componentDidMount() {
         this.updateControls();
@@ -27,7 +24,7 @@ export default class Paging extends Component {
     updateControls() {
         const queryString = window.location.hash.slice(1);
         const searchParams = new URLSearchParams(queryString);
-        let pageToUse = this.state.__page;
+        let pageToUse = this.state.page;
 
         const parsedPage = Number(searchParams.get("page"));
         if (isNaN(parsedPage)) {
@@ -63,14 +60,14 @@ export default class Paging extends Component {
             <p className="paging">
                 <button className="prev"
                     onClick={() => this.updatePage(-1)}
-                    disabled={pageToUse === 1 ? "true" : ""}
+                    disabled={pageToUse === 1 ? true : ""}
                     type="button">◀</button>
                 <span>
                     Page {pageToUse} of {lastPage}
                 </span>
                 <button
                     className="next"
-                    disabled={pageToUse === lastPage ? "true" : ""}
+                    disabled={pageToUse === lastPage ? true : ""}
                     onClick={() => this.updatePage(1)}
                     type="button"
                 >
