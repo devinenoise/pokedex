@@ -4,7 +4,7 @@ import renderer from "react-test-renderer";
 
 test('renders PokeList.js correctly', () => {
   const tree = renderer
-    .create(<PokeList />)
+    .create(<PokeList pokemon={[]} />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
