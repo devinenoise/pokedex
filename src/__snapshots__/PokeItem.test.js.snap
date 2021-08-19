@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders PokeItem.js correctly 1`] = `
+<div
+  className="container"
+>
+  <h3
+    className="creature"
+  />
+  <p
+    className="type"
+  >
+    <strong>
+      Type
+    </strong>
+    : 
+     / 
+  </p>
+  <p
+    className="attributes"
+  >
+    <strong>
+      Height
+    </strong>
+    : 
+    "
+  </p>
+  <p
+    className="attributes"
+  >
+    <strong>
+      Weight
+    </strong>
+    : 
+     lbs
+  </p>
+  <p
+    className="attributes"
+  >
+    <strong>
+      HP
+    </strong>
+    : 
+  </p>
+  <img />
+</div>
+`;
